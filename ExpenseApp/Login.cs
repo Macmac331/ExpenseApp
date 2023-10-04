@@ -11,13 +11,14 @@ using System.Windows.Forms;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
-
+using Google.Cloud.Firestore;
 
 namespace ExpenseApp
 {
     public partial class Login : Form
     {
         IFirebaseClient cliente;
+        FirestoreDb db;
         public Login()
         {
             InitializeComponent();
@@ -31,8 +32,9 @@ namespace ExpenseApp
         private void Login_Load(object sender, EventArgs e)
         {
             cliente = otherFunc.conn();
+            db = otherFunc.FirestoreConn();
             /*checking connection*/
-            if(cliente != null)
+            if(cliente != null && db != null)
             {
                 /*it can be changed*/
                 /*IDEA 1: pedeng makita sa login form kung connected o hindi, gamit yung label*/

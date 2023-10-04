@@ -8,6 +8,9 @@ using FireSharp;
 using FireSharp.Interfaces;
 using FireSharp.Config;
 using FireSharp.Response;
+
+using Google.Cloud.Firestore;
+
 namespace ExpenseApp
 {
     internal class otherFunc
@@ -23,6 +26,16 @@ namespace ExpenseApp
             IFirebaseClient client = new FirebaseClient(config);
             return client;
 
+        }
+
+        public static FirestoreDb FirestoreConn()
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory + @"xpnsetracker-firebase-adminsdk-9jswd-e2983b2fce.json";
+            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
+
+            FirestoreDb db = FirestoreDb.Create("xpnsetracker");
+
+            return db;
         }
     }
 }
