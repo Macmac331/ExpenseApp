@@ -12,10 +12,14 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Google.Cloud.Firestore;
+
 namespace ExpenseApp
 {
     public partial class Signup : Form
     {
+        FirestoreDb database;
+        String fname, lname, email, username, password;
         public Signup()
         {
             InitializeComponent();
@@ -106,6 +110,28 @@ namespace ExpenseApp
         private void txtrepeatpass_TextChanged(object sender, EventArgs e)
         {
             UpdatePasswordMatchLabel();
+        }
+
+        private void btnSignup_Click(object sender, EventArgs e)
+        {
+            username = txtUsername.Text.ToString().Trim();
+            fname = txtFirstname.Text.ToString().Trim();
+            lname = txtLastname.Text.ToString().Trim();
+            email = txtEmail.Text.ToString().Trim();
+            password = txtPassword.Text.ToString();
+            database = otherFunc.FirestoreConn();
+            DocumentReference docRef = database.Collection("Users").Document(username);
+            Dictionary<string, object> data = new Dictionary<string, object>()
+            {
+                {"First Name", fname },
+                {"Last Name", lname },
+                {"Username", username },
+                {"Email", email },
+                {"Password", password}
+            };
+
+            docRef.SetAsync(data);
+            MessageBox.Show("Successfully added");
         }
     }
 }
