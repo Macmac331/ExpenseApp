@@ -80,7 +80,7 @@ namespace ExpenseApp
         {
             if (char.IsWhiteSpace(e.KeyChar)){
                 e.Handled = true;
-                MessageBox.Show("Password cannot contain whitespaces and special characters", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Password cannot contain whitespaces", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
