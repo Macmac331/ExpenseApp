@@ -87,8 +87,9 @@
             this.lblFirstname.Location = new System.Drawing.Point(962, 7);
             this.lblFirstname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFirstname.Name = "lblFirstname";
-            this.lblFirstname.Size = new System.Drawing.Size(0, 48);
+            this.lblFirstname.Size = new System.Drawing.Size(174, 48);
             this.lblFirstname.TabIndex = 8;
+            this.lblFirstname.Text = "Hello, User!";
             // 
             // guna2Panel3
             // 

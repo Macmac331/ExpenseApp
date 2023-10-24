@@ -72,7 +72,17 @@ namespace ExpenseApp
             return docSnap;
 
         }
-
+        public async Task<QuerySnapshot> displayExpenses(string username)
+        {
+            if (string.IsNullOrEmpty(username))
+            {
+                return null;
+            }
+            FirestoreDb database = FirestoreConn();
+            CollectionReference docref = database.Collection("Users").Document(username).Collection("Expenses");
+            QuerySnapshot docSnap = await docref.GetSnapshotAsync();
+            return docSnap;
+        }
         public async Task<String> DocNameForExpenses(String username)
         {
             String Ename = null;

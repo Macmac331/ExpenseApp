@@ -39,6 +39,7 @@
             this.cmbProvince = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbMunicipal = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbBrgy = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // label1
@@ -91,9 +92,9 @@
             this.btnEnter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(123)))), ((int)(((byte)(47)))));
             this.btnEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnter.ForeColor = System.Drawing.Color.White;
-            this.btnEnter.Location = new System.Drawing.Point(44, 323);
+            this.btnEnter.Location = new System.Drawing.Point(170, 323);
             this.btnEnter.Name = "btnEnter";
-            this.btnEnter.Size = new System.Drawing.Size(243, 45);
+            this.btnEnter.Size = new System.Drawing.Size(117, 45);
             this.btnEnter.TabIndex = 8;
             this.btnEnter.Text = "Save";
             this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
@@ -177,11 +178,33 @@
             this.cmbBrgy.Size = new System.Drawing.Size(243, 36);
             this.cmbBrgy.TabIndex = 22;
             // 
+            // btnBack
+            // 
+            this.btnBack.AutoRoundedCorners = true;
+            this.btnBack.BorderColor = System.Drawing.Color.Transparent;
+            this.btnBack.BorderRadius = 21;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBack.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(4)))), ((int)(((byte)(45)))));
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(44, 323);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.ShadowDecoration.Depth = 100;
+            this.btnBack.Size = new System.Drawing.Size(117, 45);
+            this.btnBack.TabIndex = 23;
+            this.btnBack.Text = "Back";
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // LocationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 401);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.cmbBrgy);
             this.Controls.Add(this.cmbMunicipal);
             this.Controls.Add(this.cmbProvince);
@@ -211,5 +234,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmbRegion;
         private Guna.UI2.WinForms.Guna2ComboBox cmbBrgy;
         private Guna.UI2.WinForms.Guna2ComboBox cmbMunicipal;
+        private Guna.UI2.WinForms.Guna2Button btnBack;
     }
 }
