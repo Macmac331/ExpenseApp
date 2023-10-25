@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace ExpenseApp
 {
-    
     public partial class AddExpensesForm : Form
     {
+        wallet walet = new wallet();
         public int R { get; set; }
         public int M { get; set; }
         public int P { get; set; }
@@ -105,9 +105,8 @@ namespace ExpenseApp
                 dtpDate.Value = DateTime.Now;
                 txtLocation.Clear();
                 richTxtDesc.Clear();
-                wallet w = new wallet();
-                w.displayExpenses();
                 this.Hide();
+                walet.displayExpenses();
             }
         }
     }
