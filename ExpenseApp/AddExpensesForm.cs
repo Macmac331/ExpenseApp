@@ -105,8 +105,9 @@ namespace ExpenseApp
                 dtpDate.Value = DateTime.Now;
                 txtLocation.Clear();
                 richTxtDesc.Clear();
-                this.Hide();
                 walet.displayExpenses();
+                this.Hide();
+                
             }
         }
     }
