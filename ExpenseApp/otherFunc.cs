@@ -596,7 +596,7 @@ namespace ExpenseApp
             }
             return false;
         }
-        public async void updateData(string username, string fname, string lname, string email, string bio, string password, updateAcc update, profile p)
+        public async void updateData(string username, string fname, string lname, string email, string bio, string password, updateAcc update, profile p, Home h)
         {
             var database = FirestoreConn();
             otherFunc function = new otherFunc();
@@ -621,10 +621,11 @@ namespace ExpenseApp
                     if (snap.Exists)
                     {
                         await docref.UpdateAsync(data);
-                        DialogResult respond = MessageBox.Show("Successfully update your account!", "Success", MessageBoxButtons.OK);
+                        DialogResult respond = MessageBox.Show("Successfully update your account!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (respond == DialogResult.OK)
                         {
                             p.displayProfile();
+                            h.getFirstName();
                             update.Hide();
                         }
                     }

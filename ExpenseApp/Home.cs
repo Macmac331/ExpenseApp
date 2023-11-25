@@ -63,7 +63,7 @@ namespace ExpenseApp
 
         private void Home_Load(object sender, EventArgs e)
         {
-            getFirstName(username);
+            getFirstName();
         }
 
         private void guna2Panel3_Paint(object sender, PaintEventArgs e)
@@ -182,7 +182,7 @@ namespace ExpenseApp
             button2.ForeColor = Color.White;
             button3.ForeColor = Color.White;
         }
-        async void getFirstName(string username)
+        public async void getFirstName()
         {
             otherFunc o = new otherFunc();
             DocumentSnapshot snap = await o.logInFunc(username);

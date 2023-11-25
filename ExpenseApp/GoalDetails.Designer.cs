@@ -117,6 +117,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
             this.lblDate.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.Location = new System.Drawing.Point(212, 157);
             this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -160,6 +161,7 @@
             // 
             // rtbDesc
             // 
+            this.rtbDesc.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbDesc.Location = new System.Drawing.Point(42, 252);
             this.rtbDesc.Name = "rtbDesc";
             this.rtbDesc.ReadOnly = true;
@@ -170,6 +172,7 @@
             // btnDelete
             // 
             this.btnDelete.AutoRoundedCorners = true;
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
             this.btnDelete.BorderColor = System.Drawing.Color.Transparent;
             this.btnDelete.BorderRadius = 21;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -192,6 +195,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ExpenseApp.Properties.Resources.profileBG;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(439, 491);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.rtbDesc);
@@ -202,6 +207,7 @@
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.guna2GradientPanel1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GoalDetails";
             this.Text = "GoalDetails";

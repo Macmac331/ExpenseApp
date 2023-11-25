@@ -413,6 +413,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\profileBG.png" />
     <None Include="Resources\show.png" />
     <None Include="Resources\transportation.png" />
     <Content Include="Resources\GeoLite2-City.mmdb">

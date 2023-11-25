@@ -21,8 +21,8 @@ namespace ExpenseApp
         {
             InitializeComponent();
             this.profile = p;
+            
         }
-
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -88,10 +88,11 @@ namespace ExpenseApp
             string bio = rtbBio.Text;
             string password = txtPassword.Text;
             profile p = profile;
+            Home h = new Home();
 
             string username = FirebaseData.Instance.Username;
 
-            o.updateData(username, firstname, lastname, email, bio, password, this, p);
+            o.updateData(username, firstname, lastname, email, bio, password, this, p, h);
             storeImage();
         }
 
