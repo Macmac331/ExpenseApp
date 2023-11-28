@@ -25,6 +25,7 @@ namespace ExpenseApp
             lblDate.Text = data["GoalDate"].ToString();
             lblAmount.Text = otherFunc.amountBeautify(float.Parse(data["Amount"].ToString()));
             rtbDesc.Text = data["Description"].ToString();
+            lblGoalStatus.Text = data["Status"].ToString();
             
         }
         private void closeBTN_Click(object sender, EventArgs e)
@@ -85,5 +86,9 @@ namespace ExpenseApp
             }
         }
 
+        private void guna2GradientPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

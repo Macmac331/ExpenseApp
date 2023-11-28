@@ -289,7 +289,8 @@ namespace ExpenseApp
                     {"GoalDate", goalDate},
                     {"Description", desc},
                     {"timestamp", FieldValue.ServerTimestamp},
-                    {"Percentage", 0}
+                    {"Percentage", 0},
+                    {"Status", "Ongoing"}
                 };
                 await docRef.SetAsync(data);
                 updatePercentagePerGoal(username);
