@@ -22,7 +22,7 @@ namespace ExpenseApp
         public Home()
         {
             InitializeComponent();
-
+            
             btnDashboard.FillColor = SystemColors.Control;
             btnDashboard.ForeColor = Color.Black;
             changeButtonColor(btnWallet, btnAccount, btnGroup);
@@ -182,14 +182,14 @@ namespace ExpenseApp
             button2.ForeColor = Color.White;
             button3.ForeColor = Color.White;
         }
-        async void getFirstName(string username)
+        public async void getFirstName(string username)
         {
             otherFunc o = new otherFunc();
             DocumentSnapshot snap = await o.logInFunc(username);
             if (snap.Exists)
             {
-                FirebaseData fd = snap.ConvertTo<FirebaseData>();
-                lblFirstname.Text = "Hello, " + fd.FirstName + "!";
+                String fname = snap.GetValue<String>("First Name");
+                lblFirstname.Text = "Hello, " + fname + "!";
             }
         }
 

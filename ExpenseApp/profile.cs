@@ -46,6 +46,7 @@ namespace ExpenseApp
         {
             otherFunc.retrieveImage(username, pbProfilepic);
             otherFunc o = new otherFunc();
+            Home h = new Home();
             DocumentSnapshot snap = await o.logInFunc(username);
             if (snap.Exists)
             {
@@ -56,6 +57,8 @@ namespace ExpenseApp
                 lblLastname.Text = fd.LastName;
                 lblEmail.Text = fd.Email;
                 rtbBio.Text = fd.Bio;
+                h.lblFirstname.Text = fd.FirstName;
+
             }
         }
         

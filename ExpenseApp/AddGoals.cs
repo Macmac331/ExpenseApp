@@ -40,10 +40,7 @@ namespace ExpenseApp
             String title = txtTitle.Text.ToString();
             String desc = richTxtDesc.Text.ToString();
             String res = await otherFunc.addNewGoal(username,gd, amount, title, desc);
-            //if (!w.flagGoal)
-            //{
-            //    w.displayGoals();
-            //}
+            
             DialogResult r = MessageBox.Show(res, "Response", MessageBoxButtons.OK);
             if(r == DialogResult.OK)
             {
@@ -53,6 +50,8 @@ namespace ExpenseApp
                     txtAmount.Clear();
                     txtTitle.Clear();
                     richTxtDesc.Clear();
+                    w.flpGoals.Controls.Clear();
+                    w.displayGoals();
                 }
                 else
                 {

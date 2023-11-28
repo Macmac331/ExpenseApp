@@ -61,9 +61,10 @@ namespace ExpenseApp
         }
 
         private void btnAddXpns_Click(object sender, EventArgs e)
-        {   
+        {
             AddExpensesForm AEF = new AddExpensesForm(this);
             AEF.ShowDialog();
+            
         }
 
         private void btnAddMoney_Click(object sender, EventArgs e)
@@ -102,7 +103,7 @@ namespace ExpenseApp
                 if (docsnap.Exists)
                 {
                     string docname = docName;
-                    string amount = am.ToString();
+                    float amount = am;
                     string date = d.ToString();
 
                     Guna2GradientPanel pnl = new Guna2GradientPanel();
@@ -127,7 +128,7 @@ namespace ExpenseApp
                     lblAmount.Size = new Size(113, 24);
                     lblAmount.Location = new Point(193, 22);
                     lblAmount.ForeColor = Color.FromArgb(187, 141, 228);
-                    lblAmount.Text = "₱" + amount;
+                    lblAmount.Text = otherFunc.amountBeautify(amount);
 
                     System.Windows.Forms.Label lblDate = new System.Windows.Forms.Label();
                     lblDate.Font = new Font("Poppins", 12f, FontStyle.Bold | FontStyle.Regular);
@@ -137,7 +138,7 @@ namespace ExpenseApp
                     lblDate.ForeColor = Color.FromArgb(187, 141, 228);
                     lblDate.Text = date;
 
-                    pnl.Click += (sender, e) => PnlGoals_Click(sender, e, docname);
+                    pnl.DoubleClick += (sender, e) => PnlGoals_DoubleClick(sender, e, docname);
 
                     pnl.Controls.Add(lblDocname);
                     pnl.Controls.Add(lblAmount);
@@ -146,7 +147,7 @@ namespace ExpenseApp
                 }
             }
         }
-        public async void PnlGoals_Click(object sender, EventArgs e, string dn)
+        public async void PnlGoals_DoubleClick(object sender, EventArgs e, string dn)
         {
             otherFunc function = new otherFunc();
             string goalId = dn;
@@ -338,7 +339,7 @@ namespace ExpenseApp
                     lblDate.ForeColor = Color.FromArgb(83, 123, 47);
                     lblDate.Text = date;
 
-                    pnl.Click += (sender, e) => PnlExpenses_Click(sender, e, dn);
+                    pnl.Click += (sender, e) => PnlExpenses_DoubleClick(sender, e, dn);
 
                     pnl.Controls.Add(lblCat);
                     pnl.Controls.Add(lblAmount);
@@ -349,7 +350,7 @@ namespace ExpenseApp
             }
             
         }
-        public async void PnlExpenses_Click(object sender, EventArgs e, string dn)
+        public async void PnlExpenses_DoubleClick(object sender, EventArgs e, string dn)
         {
             otherFunc function = new otherFunc();
             string expenseId = dn;

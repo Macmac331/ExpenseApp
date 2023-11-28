@@ -80,6 +80,7 @@
             this.lblFirstname.Size = new System.Drawing.Size(174, 48);
             this.lblFirstname.TabIndex = 8;
             this.lblFirstname.Text = "Hello, User!";
+            
             // 
             // pictureBox1
             // 
@@ -320,6 +321,6 @@
         private Guna.UI2.WinForms.Guna2Button btnWallet;
         private Guna.UI2.WinForms.Guna2Button btnDashboard;
         private System.Windows.Forms.Panel homePanel;
-        private System.Windows.Forms.Label lblFirstname;
+        public System.Windows.Forms.Label lblFirstname;
     }
 }

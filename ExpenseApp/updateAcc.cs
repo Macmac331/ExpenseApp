@@ -79,6 +79,8 @@ namespace ExpenseApp
             }
         }
 
+        
+
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             otherFunc o = new otherFunc();
@@ -92,6 +94,7 @@ namespace ExpenseApp
             string username = FirebaseData.Instance.Username;
 
             o.updateData(username, firstname, lastname, email, bio, password, this, p);
+            
             storeImage();
         }
 
