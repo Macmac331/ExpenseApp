@@ -1,4 +1,4 @@
-﻿namespace ExpenseApp
+namespace ExpenseApp
 {
     partial class profile
     {
