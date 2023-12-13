@@ -533,6 +533,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpLogs;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label4; 
     }
 }
