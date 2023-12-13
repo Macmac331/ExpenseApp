@@ -74,12 +74,10 @@ namespace ExpenseApp
                     System.Windows.Forms.Label lblGroupname = new System.Windows.Forms.Label();
                     lblGroupname.Font = new Font("Poppins Regular", 14.25f);
                     lblGroupname.BackColor = Color.Transparent;
-                    lblGroupname.Size = new Size(195, 52);
-                    lblGroupname.Location = new Point(0, 0);
+                    lblGroupname.Size = new Size(200, 33);
+                    lblGroupname.Location = new Point(19, 12);
                     lblGroupname.ForeColor = Color.White;
                     lblGroupname.Text = groupN;
-                    lblGroupname.TextAlign = ContentAlignment.MiddleCenter;
-                    lblGroupname.AutoSize = false;
                     lblGroupname.Cursor = Cursors.Hand;
 
                     pnl.Click += (sender, e) => {
@@ -130,7 +128,6 @@ namespace ExpenseApp
             groupCode = gc;
             AddExpensesForm adf = new AddExpensesForm(new wallet(), true, groupCode, this);
             lblGN.Text = groupN;
-            lblGroupCode.Text = "Group Code: " + groupCode;
             Console.WriteLine(groupCode);
             loadWalletGroup();
             flpMembers.Controls.Clear();
@@ -141,7 +138,6 @@ namespace ExpenseApp
             groupCode = gc;
             AddExpensesForm adf = new AddExpensesForm(new wallet(), true, groupCode, this);
             lblGN.Text = groupN;
-            lblGroupCode.Text = "Group Code: " + groupCode;
             loadWalletGroup();
             flpMembers.Controls.Clear();
             displayMembers(groupCode);
@@ -211,7 +207,7 @@ namespace ExpenseApp
                     System.Windows.Forms.Label lblname = new System.Windows.Forms.Label();
                     lblname.Font = new Font("Poppins", 9.75f,FontStyle.Bold);
                     lblname.BackColor = Color.Transparent;
-                    lblname.Size = new Size(155, 19);
+                    lblname.Size = new Size(185, 19);
                     lblname.Location = new Point(47, 13);
                     lblname.ForeColor = Color.Black;
                     lblname.Text = firstname + " " + lastname;
@@ -288,7 +284,7 @@ namespace ExpenseApp
                     lblcreator.Size = new Size(276, 37);
                     lblcreator.Location = new Point(37, 52);
                     lblcreator.ForeColor = Color.FromArgb(83, 123, 47);
-                    lblcreator.Text = "Added By: " + await otherFunc.getFirstname(creator);
+                    lblcreator.Text = "Added By: " + await o.getFirstname(creator);
 
                     System.Windows.Forms.Label lblDate = new System.Windows.Forms.Label();
                     lblDate.Font = new Font("Poppins", 9.75f, FontStyle.Regular);
@@ -381,7 +377,7 @@ namespace ExpenseApp
                     lblDocname.Size = new Size(180, 24);
                     lblDocname.Location = new Point(23, 22);
                     lblDocname.ForeColor = Color.FromArgb(r, g, b);
-                    lblDocname.Text = "Added By: "+ await otherFunc.getFirstname(creator);
+                    lblDocname.Text = "Added By: "+ await o.getFirstname(creator);
 
                     System.Windows.Forms.Label lblAmount = new System.Windows.Forms.Label();
                     lblAmount.Font = new Font("Poppins", 9.75f, FontStyle.Bold | FontStyle.Regular);
