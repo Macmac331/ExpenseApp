@@ -1,4 +1,4 @@
-﻿using FireSharp.Interfaces;
+using FireSharp.Interfaces;
 using Google.Cloud.Firestore;
 using Guna.UI2.WinForms;
 using System;
