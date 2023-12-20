@@ -255,27 +255,33 @@ namespace ExpenseApp
                 displayExpensesTransaction(groupSpendings);
             }
         }
-        private void displayCustomExpensesTransaction(DataTable tbl, int days)
+        private void displayCustomExpenses(DataTable tbl, int days)
         {
-            int totalTransaction = customTotalTransactions(tbl, days);
-            lblTransaction.Text = totalTransaction.ToString();
             float totalSpending = customTotalExpenses(tbl, days);
             string spendingBeautify = otherFunc.amountBeautify(totalSpending);
             lblSpendings.Text = spendingBeautify;
         }
+        private void displayCustomTransaction(DataTable tbl, int days)
+        {
+            float totalTransaction = customTotalTransactions(tbl, days);
+            lblTransaction.Text = totalTransaction.ToString();
+        }
+
         private void btnWeek_Click(object sender, EventArgs e)
         {
             if (!flag)
             {
-                displayCustomExpensesTransaction(expensesDataTable, 7);
+                displayCustomExpenses(expensesDataTable, 7);
                 displayDonut(expensesCatDataTable, 7);
                 displayExpensesChart(expensesDataTable, 7);
+                displayCustomTransaction(totalExpensesTable, 7);
             }
             else
             {
                 displayExpensesChart(totalGroupExpenses, 7);
                 displayDonut(groupCat, 7);
-                displayCustomExpensesTransaction(groupSpendings, 7);
+                displayCustomExpenses(groupSpendings, 7);
+                displayCustomTransaction(totalGroupExpenses, 7);
             }
 
         }
@@ -283,30 +289,35 @@ namespace ExpenseApp
         {
             if (!flag)
             {
-                displayCustomExpensesTransaction(expensesDataTable, 30);
+                displayCustomExpenses(expensesDataTable, 30);
                 displayDonut(expensesCatDataTable, 30);
                 displayExpensesChart(expensesDataTable, 30);
+                displayCustomTransaction(totalExpensesTable, 30);
             }
             else
             {
-                displayCustomExpensesTransaction(groupSpendings, 30);
+                displayCustomExpenses(groupSpendings, 30);
                 displayDonut(groupCat, 30);
                 displayExpensesChart(totalGroupExpenses, 30);
+                displayCustomTransaction(totalGroupExpenses, 30);
             }
         }
         private void btnToday_Click(object sender, EventArgs e)
         {
             if (!flag)
             {
-                displayCustomExpensesTransaction(expensesDataTable, 0);
+                displayCustomExpenses(expensesDataTable, 0);
                 displayDonut(expensesCatDataTable, 0);
                 displayExpensesChart(expensesDataTable, 0);
+                displayCustomTransaction(totalExpensesTable, 0);
+
             }
             else
             {
-                displayCustomExpensesTransaction(groupSpendings, 0);
+                displayCustomExpenses(groupSpendings, 0);
                 displayDonut(groupCat, 0);
                 displayExpensesChart(totalGroupExpenses, 0);
+                displayCustomTransaction(totalGroupExpenses,0);
             }
 
         }
@@ -369,29 +380,6 @@ namespace ExpenseApp
 
             return totalAmount;
         }
-        private static Dictionary<DateTime, double> customDayExpenses(DataTable expensesDataTable, int days)
-        {
-            DateTime startDate = DateTime.UtcNow.Date.AddDays(-days);
-            var expensesByDate = new Dictionary<DateTime, double>();
-            var filteredRows = expensesDataTable.AsEnumerable()
-                .Where(row => row.Field<DateTime>("Date") >= startDate);
-
-            foreach (var row in filteredRows)
-            {
-                DateTime date = row.Field<DateTime>("Date");
-                double amount = row.Field<double>("Amount");
-
-                if (expensesByDate.ContainsKey(date))
-                {
-                    expensesByDate[date] += amount;
-                }
-                else
-                {
-                    expensesByDate[date] = amount;
-                }
-            }
-            return expensesByDate;
-        }
         private static Dictionary<string, double> customDayCategories(DataTable expensesCatDataTable, int days)
         {
             DateTime startDate = DateTime.UtcNow.Date.AddDays(-days);
@@ -417,6 +405,34 @@ namespace ExpenseApp
                 }
             }
             return expenseByCategories;
+        }
+        private static Dictionary<DateTime, double> customDayExpenses(DataTable expensesDataTable, int days)
+        {
+            DateTime startDate = DateTime.UtcNow.Date.AddDays(-days);
+            var expensesByDay = new Dictionary<DateTime, double>();
+
+            var filteredRows = expensesDataTable.AsEnumerable()
+                .Where(row => row.Field<DateTime>("Date") >= startDate);
+
+            foreach (var row in filteredRows)
+            {
+                if (row["Date"] != null && row["Amount"] != null &&
+                    double.TryParse(row["Amount"].ToString(), out double amount))
+                {
+                    DateTime expenseDate = DateTime.Parse(row["Date"].ToString());
+
+                    if (expensesByDay.ContainsKey(expenseDate.Date))
+                    {
+                        expensesByDay[expenseDate.Date] += amount;
+                    }
+                    else
+                    {
+                        expensesByDay[expenseDate.Date] = amount;
+                    }
+                }
+            }
+
+            return expensesByDay;
         }
         async Task<DataTable> populateCmbGroupCode()
         {

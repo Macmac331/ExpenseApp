@@ -112,7 +112,7 @@
             this.btnSwitchPanel.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSwitchPanel.ForeColor = System.Drawing.Color.White;
             this.btnSwitchPanel.Location = new System.Drawing.Point(461, 359);
-            this.btnSwitchPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSwitchPanel.Margin = new System.Windows.Forms.Padding(4);
             this.btnSwitchPanel.Name = "btnSwitchPanel";
             this.btnSwitchPanel.Size = new System.Drawing.Size(189, 55);
             this.btnSwitchPanel.TabIndex = 19;
@@ -166,7 +166,7 @@
             this.btnCreate.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.ForeColor = System.Drawing.Color.White;
             this.btnCreate.Location = new System.Drawing.Point(19, 274);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(328, 55);
             this.btnCreate.TabIndex = 20;
@@ -266,7 +266,7 @@
             this.btnJoin.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJoin.ForeColor = System.Drawing.Color.White;
             this.btnJoin.Location = new System.Drawing.Point(19, 274);
-            this.btnJoin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnJoin.Margin = new System.Windows.Forms.Padding(4);
             this.btnJoin.Name = "btnJoin";
             this.btnJoin.Size = new System.Drawing.Size(328, 55);
             this.btnJoin.TabIndex = 20;
@@ -289,7 +289,7 @@
             this.groupCodeTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.groupCodeTB.Location = new System.Drawing.Point(19, 119);
             this.groupCodeTB.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.groupCodeTB.MaxLength = 6;
+            this.groupCodeTB.MaxLength = 8;
             this.groupCodeTB.Name = "groupCodeTB";
             this.groupCodeTB.PasswordChar = '\0';
             this.groupCodeTB.PlaceholderText = "";

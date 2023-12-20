@@ -1647,7 +1647,7 @@ namespace ExpenseApp
             QuerySnapshot expensesSnapshot = await expensesCollection.GetSnapshotAsync();
 
             DataTable transactionsTable = new DataTable();
-            transactionsTable.Columns.Add("Date", typeof(string));
+            transactionsTable.Columns.Add("Date", typeof(DateTime));
             transactionsTable.Columns.Add("Amount", typeof(double));
             transactionsTable.Columns.Add("Category", typeof(string));
 

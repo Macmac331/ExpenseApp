@@ -112,7 +112,7 @@
             this.cmbCategory.ForeColor = System.Drawing.Color.Black;
             this.cmbCategory.ItemHeight = 30;
             this.cmbCategory.Location = new System.Drawing.Point(45, 202);
-            this.cmbCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCategory.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(309, 36);
             this.cmbCategory.TabIndex = 16;
@@ -150,7 +150,7 @@
             this.btnSave.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(624, 457);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(156, 55);
             this.btnSave.TabIndex = 20;
@@ -172,7 +172,7 @@
             this.btnBack.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.Location = new System.Drawing.Point(791, 457);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(5);
             this.btnBack.Name = "btnBack";
             this.btnBack.ShadowDecoration.Depth = 100;
             this.btnBack.Size = new System.Drawing.Size(156, 55);
@@ -188,7 +188,7 @@
             this.dtpDate.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtpDate.Location = new System.Drawing.Point(44, 298);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpDate.Name = "dtpDate";
@@ -210,7 +210,7 @@
             this.btnCustomize.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomize.ForeColor = System.Drawing.Color.White;
             this.btnCustomize.Location = new System.Drawing.Point(373, 202);
-            this.btnCustomize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCustomize.Margin = new System.Windows.Forms.Padding(4);
             this.btnCustomize.Name = "btnCustomize";
             this.btnCustomize.Size = new System.Drawing.Size(69, 49);
             this.btnCustomize.TabIndex = 23;
@@ -244,7 +244,7 @@
             this.btnLocation.Image = global::ExpenseApp.Properties.Resources.location;
             this.btnLocation.ImageSize = new System.Drawing.Size(40, 40);
             this.btnLocation.Location = new System.Drawing.Point(383, 370);
-            this.btnLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLocation.Margin = new System.Windows.Forms.Padding(4);
             this.btnLocation.Name = "btnLocation";
             this.btnLocation.Size = new System.Drawing.Size(60, 60);
             this.btnLocation.TabIndex = 5;
@@ -285,7 +285,7 @@
             this.guna2ShadowPanel1.ShadowDepth = 130;
             this.guna2ShadowPanel1.ShadowShift = 10;
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(475, 148);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(475, 264);
             this.guna2ShadowPanel1.TabIndex = 29;
             // 
             // richTxtDesc
@@ -293,7 +293,7 @@
             this.richTxtDesc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTxtDesc.Font = new System.Drawing.Font("Poppins", 12F);
             this.richTxtDesc.Location = new System.Drawing.Point(13, 11);
-            this.richTxtDesc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTxtDesc.Margin = new System.Windows.Forms.Padding(4);
             this.richTxtDesc.MaxLength = 50;
             this.richTxtDesc.Name = "richTxtDesc";
             this.richTxtDesc.Size = new System.Drawing.Size(432, 107);
@@ -328,7 +328,7 @@
             this.Controls.Add(this.guna2ShadowPanel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(973, 528);
             this.Name = "AddExpensesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
